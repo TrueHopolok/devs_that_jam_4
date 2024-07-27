@@ -10,6 +10,8 @@ signal failed
 @onready var game_timer: Timer = %GameTimer
 @onready var catch_area: Area2D = %CatchArea
 
+
+
 func _ready() -> void:
 	set_process(false)
 	set_process_input(false)
@@ -37,8 +39,11 @@ func _on_success_bar_value_changed(value: float) -> void:
 		# play_sound(success)
 		# play_animation(success)
 		# wait till animation is finished
+		print("You catched: ", NameGenerator.next())
 		finished.emit()
 		visible = false
+
+
 
 
 func activate():
