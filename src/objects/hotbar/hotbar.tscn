@@ -21,4 +21,11 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
+text = "You caught: {catched}"
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

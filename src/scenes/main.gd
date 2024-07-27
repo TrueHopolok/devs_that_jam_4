@@ -53,7 +53,7 @@ func activate_object(new_state: STATE = game_state) -> void:
 
 # Connect functions to finished signals in objects
 func connect_objects() -> void:
-	objects["menu"].finished.connect(activate_object.bind(STATE.Throwing))
+	objects["menu"].finished.connect(activate_object.bind(STATE.Swimming))
 	objects["swim"].finished.connect(func() -> void:
 		randomize()
 		fishes_left = randi_range(MIN_FISHES, MIN_FISHES * 2)

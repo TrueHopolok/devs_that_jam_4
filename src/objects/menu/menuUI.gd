@@ -8,11 +8,13 @@ signal finished
 func _ready() -> void:
 	camera.animation_finished.connect(func(anim_name: String) -> void:
 		if anim_name == "zoomout":
-			finished.emit())
+			finished.emit()
+			queue_free())
 
 
 func _on_button_pressed() -> void:
 	camera.play("zoomout")
+	visible = false
 
 
 func activate() -> void:

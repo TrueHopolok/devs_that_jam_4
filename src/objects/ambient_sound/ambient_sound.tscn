@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6nbw0rlmvrqc"]
 
 [ext_resource type="Script" path="res://src/objects/ambient_sound/ambient_sound.gd" id="1_b6ilg"]
-[ext_resource type="AudioStream" uid="uid://8ko8vm0kv64l" path="res://assets/Ambient/MainAmbient.mp3" id="2_fn7eq"]
+[ext_resource type="AudioStream" uid="uid://8ko8vm0kv64l" path="res://assets/ambient/MainAmbient.mp3" id="2_fn7eq"]
 [ext_resource type="AudioStream" uid="uid://cdhmtvlrp2cmt" path="res://assets/temporary/1.mp3" id="2_j2uht"]
 
 [node name="AmbientSound" type="Node"]
