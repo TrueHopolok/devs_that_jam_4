@@ -1,34 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://duwni0ldto23s"]
-
-[ext_resource type="Script" path="res://src/objects/camera/animated_camera.gd" id="1_1jqrg"]
-
-[sub_resource type="Animation" id="Animation_e7gfs"]
-resource_name = "zoomout"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(0.55, 1),
-"update": 0,
-"values": [Vector2(640, 0), Vector2(640, 360)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:zoom")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(0.55, 1),
-"update": 0,
-"values": [Vector2(2, 2), Vector2(1, 1)]
-}
+[gd_scene load_steps=5 format=3 uid="uid://duwni0ldto23s"]
 
 [sub_resource type="Animation" id="Animation_gw3pu"]
 length = 0.001
@@ -85,6 +55,34 @@ tracks/1/keys = {
 "values": [Vector2(2, 2)]
 }
 
+[sub_resource type="Animation" id="Animation_e7gfs"]
+resource_name = "zoomout"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.55, 1),
+"update": 0,
+"values": [Vector2(640, 0), Vector2(640, 360)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.55, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7krx1"]
 _data = {
 "RESET": SubResource("Animation_gw3pu"),
@@ -95,9 +93,9 @@ _data = {
 [node name="AnimtedCamera" type="Camera2D"]
 offset = Vector2(640, 360)
 zoom = Vector2(2, 2)
-script = ExtResource("1_1jqrg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["CameraAnimation"]]
 libraries = {
 "": SubResource("AnimationLibrary_7krx1")
 }
+autoplay = "default"

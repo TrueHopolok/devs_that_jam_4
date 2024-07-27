@@ -1,9 +1,15 @@
-[gd_scene format=3 uid="uid://cdls0wn1los4y"]
+[gd_scene load_steps=2 format=3 uid="uid://cdls0wn1los4y"]
 
-[node name="Swim" type="Control"]
-layout_mode = 3
+[ext_resource type="Script" path="res://src/objects/swim/swim.gd" id="1_4gboq"]
+
+[node name="Swim" type="ProgressBar"]
+z_index = 20
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+max_value = 0.6
+step = 0.005
+allow_greater = true
+script = ExtResource("1_4gboq")
