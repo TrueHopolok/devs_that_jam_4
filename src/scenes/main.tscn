@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cdls0wn1los4y" path="res://src/objects/swim/swim.tscn" id="5_qf4rx"]
 [ext_resource type="PackedScene" uid="uid://wjrdshwkrgu4" path="res://src/objects/throw/throw.tscn" id="6_e8e7n"]
 
+
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_qemhp")
 
