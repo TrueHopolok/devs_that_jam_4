@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b78tqecfajby1"]
+[gd_scene load_steps=8 format=3 uid="uid://b78tqecfajby1"]
 
 [ext_resource type="Texture2D" uid="uid://bp4r2t440ben4" path="res://icon.svg" id="1_jmvuk"]
 [ext_resource type="Script" path="res://src/scenes/main.gd" id="1_qemhp"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://duwni0ldto23s" path="res://src/objects/camera/animated_camera.tscn" id="4_t3oad"]
 [ext_resource type="PackedScene" uid="uid://cdls0wn1los4y" path="res://src/objects/swim/swim.tscn" id="5_qf4rx"]
 [ext_resource type="PackedScene" uid="uid://wjrdshwkrgu4" path="res://src/objects/throw/throw.tscn" id="6_e8e7n"]
-
+[ext_resource type="PackedScene" uid="uid://b6nbw0rlmvrqc" path="res://src/objects/ambient_sound/ambient_sound.tscn" id="7_wxg7q"]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_qemhp")
@@ -47,3 +47,5 @@ offset_left = 1088.0
 offset_top = 282.0
 offset_right = 1177.0
 offset_bottom = 350.0
+
+[node name="AmbientSound" parent="." instance=ExtResource("7_wxg7q")]

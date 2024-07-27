@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6nbw0rlmvrqc"]
+
+[ext_resource type="Script" path="res://src/objects/ambient_sound/ambient_sound.gd" id="1_b6ilg"]
+[ext_resource type="AudioStream" uid="uid://cdhmtvlrp2cmt" path="res://assets/temporary/1.mp3" id="2_j2uht"]
+
+[node name="AmbientSound" type="Node"]
+process_mode = 3
+script = ExtResource("1_b6ilg")
+
+[node name="Main" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+
+[node name="Random" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_j2uht")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="finished" from="Random" to="." method="_on_random_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
