@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://bedrieib543ak"]
+
+[ext_resource type="Texture2D" uid="uid://bp4r2t440ben4" path="res://icon.svg" id="1_jf0g1"]
+[ext_resource type="Script" path="res://src/objects/pull/pull_main.gd" id="1_olxdt"]
+[ext_resource type="Script" path="res://src/objects/pull/catch_area.gd" id="2_rd4bb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rb8b0"]
+radius = 65.0057
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4wps"]
+radius = 17.0872
+
+[node name="Pull" type="HBoxContainer"]
+z_index = 20
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_olxdt")
+
+[node name="TimeContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="TimeContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TimeBar" type="ProgressBar" parent="TimeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="GameTimer" type="Timer" parent="TimeContainer/TimeBar"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="GameConatiner" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="GameConatiner"]
+position = Vector2(175, 360)
+scale = Vector2(1, 4.51563)
+texture = ExtResource("1_jf0g1")
+
+[node name="CatchArea" type="Area2D" parent="GameConatiner"]
+unique_name_in_owner = true
+position = Vector2(175, 360)
+scale = Vector2(1, 1.16016)
+collision_layer = 0
+monitorable = false
+script = ExtResource("2_rd4bb")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameConatiner/CatchArea"]
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("1_jf0g1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameConatiner/CatchArea"]
+shape = SubResource("CircleShape2D_rb8b0")
+
+[node name="FishArea" type="Area2D" parent="GameConatiner"]
+position = Vector2(176, 360)
+scale = Vector2(1, 1.16016)
+collision_mask = 0
+monitoring = false
+
+[node name="Sprite2D" type="Sprite2D" parent="GameConatiner/FishArea"]
+modulate = Color(0, 0, 1, 1)
+scale = Vector2(1, 0.255)
+texture = ExtResource("1_jf0g1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameConatiner/FishArea"]
+shape = SubResource("CircleShape2D_s4wps")
+
+[node name="SuccessContanier" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="SuccessContanier"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SuccessBar" type="ProgressBar" parent="SuccessContanier"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 4.0
+step = 0.001
+
+[connection signal="timeout" from="TimeContainer/TimeBar/GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="value_changed" from="SuccessContanier/SuccessBar" to="." method="_on_success_bar_value_changed"]

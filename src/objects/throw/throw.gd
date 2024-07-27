@@ -32,6 +32,7 @@ func _input(_event: InputEvent) -> void:
 
 
 func activate() -> void:
+	print(get_stack())
 	value = 0.0
 	set_process(true)
 	set_process_input(true)

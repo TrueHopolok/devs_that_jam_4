@@ -1,6 +1,7 @@
 extends TextureProgressBar
 
-signal finished(succeeded: bool)
+signal finished
+signal failed
 
 @export_range(1.0, 120.0) var min_catch_time: float = 5.0
 @export_range(1.0, 120.0) var max_catch_time: float = 60.0
@@ -19,6 +20,7 @@ func _process(delta: float) -> void:
 	arrow.rotation_degrees += max_value / cycle_time * delta
 	if arrow.rotation_degrees >= radial_initial_angle + value * 2:
 		# TODO: play_sound(error)
+		failed.emit()
 		activate()
 
 
@@ -39,6 +41,7 @@ func _input(_event: InputEvent) -> void:
 			visible = false
 		else:
 			# TODO: play_sound(error)
+			failed.emit()
 			activate()
 
 
