@@ -1,24 +1,21 @@
 extends CanvasLayer
 
-@onready var stats = $Book/VBoxContainer/Stats
-
-
-@onready var book = $Book
+@onready var main = get_tree().get_first_node_in_group("Main")
+@onready var stats = %StatsLabel
+@onready var book = %StatsContainer
 var fish_catched_t = "
-Fishs catched: {catched}
-Grass touched: {grass}
-"
+Time played: {time}
+Fishes catched: {catched}
+Fishes lost: {lost}"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	stats.text = fish_catched_t.format({"catched": "HZ", "grass":"0"})
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	book.visible = false
 
 
 func _on_button_pressed():
+	stats.text = fish_catched_t.format({
+		"time": main.stats["time"], 
+		"catched": main.stats["catched"], 
+		"lost": main.stats["lost"]})
 	book.visible = !book.visible
+	get_tree().paused = book.visible

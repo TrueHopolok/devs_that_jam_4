@@ -9,6 +9,11 @@ enum STATE {
 }
 
 var game_state: STATE = STATE.InMenu
+var stats: Dictionary = {
+	"time": 0,
+	"lost": 0,
+	"catched": 0,
+}
 
 # TODO: add all new objects into dict
 @onready var objects: Dictionary = {
