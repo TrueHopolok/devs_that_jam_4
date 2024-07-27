@@ -21,3 +21,4 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
+horizontal_alignment = 1

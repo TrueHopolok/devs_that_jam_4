@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const text: String = "You catched: {catched}"
+const text: String = "You caught: {catched}"
 @onready var label = $MarginContainer/Label
 
 func display(name: String) -> void:
