@@ -91,6 +91,7 @@ _data = {
 }
 
 [node name="AnimtedCamera" type="Camera2D"]
+process_mode = 3
 offset = Vector2(640, 360)
 zoom = Vector2(2, 2)
 
