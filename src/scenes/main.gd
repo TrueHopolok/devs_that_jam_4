@@ -1,6 +1,6 @@
 extends Node2D
 
-const MIN_FISHES: int = 8
+const MIN_FISHES: int = 5
 
 enum STATE {
 	InMenu,
