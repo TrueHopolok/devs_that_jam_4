@@ -12,12 +12,12 @@ enum STATE {
 @export var game_state: STATE = STATE.InMenu
 
 # TODO: add all new objects into dict
-var objects: Dictionary = {
-	"menu": 	null,
+@onready var objects: Dictionary = {
+	"menu": 	%MenuUI,
 	"throw": 	null,
 	"catch": 	null,
 	"pull": 	null,
-	"swim": 	null,
+	"swim": 	%Swim,
 }
 
 
@@ -28,11 +28,13 @@ func _ready() -> void:
 
 # TODO: for all new object add activation
 # Activate ceratain object based on game state
-func activate_object() -> void:
+func activate_object(new_state: STATE = game_state) -> void:
+	game_state = new_state
 	match game_state:
 		STATE.InMenu:
-			#objects["menu"].activate()
-			pass
+			objects["menu"].activate()
+		STATE.Swimming:
+			objects["swim"].activate()
 		_:
 			assert(false, "Incorrect state/object ot activate")
 
@@ -40,5 +42,5 @@ func activate_object() -> void:
 # TODO: for all new objects add connection
 # Connect functions to finished signals in objects
 func connect_objects() -> void:
-	#objects["menu"].finished.connect(finish_menu)
-	pass
+	objects["menu"].finished.connect(activate_object.bind(STATE.Swimming))
+	#objects["swim"].finished.connect(finish_swim)
