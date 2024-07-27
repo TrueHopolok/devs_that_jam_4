@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b78tqecfajby1"]
+[gd_scene load_steps=13 format=3 uid="uid://b78tqecfajby1"]
 
 [ext_resource type="Texture2D" uid="uid://bp4r2t440ben4" path="res://icon.svg" id="1_jmvuk"]
 [ext_resource type="Script" path="res://src/scenes/main.gd" id="1_qemhp"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b6nbw0rlmvrqc" path="res://src/objects/ambient_sound/ambient_sound.tscn" id="7_wxg7q"]
 [ext_resource type="PackedScene" uid="uid://bww6dpaq1avw5" path="res://src/objects/catch/catch.tscn" id="8_81g5v"]
 [ext_resource type="PackedScene" uid="uid://bedrieib543ak" path="res://src/objects/pull/pull.tscn" id="11_o46ln"]
+[ext_resource type="PackedScene" uid="uid://cfi1qw3u25bwt" path="res://src/objects/hotbar/hotbar.tscn" id="12_et4ip"]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_qemhp")
@@ -74,3 +75,5 @@ offset_left = 232.0
 offset_top = -27.0
 offset_right = 1248.0
 offset_bottom = 553.0
+
+[node name="Hotbar" parent="." instance=ExtResource("12_et4ip")]

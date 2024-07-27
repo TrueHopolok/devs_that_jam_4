@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-signal finished
+signal finished(name: String)
 signal failed
 
 @export var game_length: float = 50.0
@@ -42,8 +42,7 @@ func _on_success_bar_value_changed(value: float) -> void:
 		# play_sound(success)
 		# play_animation(success)
 		# wait till animation is finished
-		print("You catched: ", NameGenerator.next())
-		finished.emit()
+		finished.emit(NameGenerator.next())
 		visible = false
 
 

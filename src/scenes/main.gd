@@ -10,6 +10,7 @@ enum STATE {
 	Swimming,
 }
 
+@onready var hotbar = $Hotbar
 @onready var objects: Dictionary = {
 	"menu": 	%MenuUI,
 	"throw": 	%Throw,
@@ -67,8 +68,9 @@ func connect_objects() -> void:
 		stats["lost"] += 1
 		#TODO: save stats
 		activate_object(STATE.Throwing))
-	objects["pull"].finished.connect(func() -> void:
+	objects["pull"].finished.connect(func(name: String) -> void:
 		stats["catched"] += 1
+		hotbar.display(name)
 		fishes_left -= 1
 		if fishes_left <= 0:
 			activate_object(STATE.Swimming)
