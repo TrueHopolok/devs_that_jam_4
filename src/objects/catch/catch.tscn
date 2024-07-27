@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bww6dpaq1avw5"]
+
+[ext_resource type="Texture2D" uid="uid://bp4r2t440ben4" path="res://icon.svg" id="1_bs3kj"]
+[ext_resource type="Script" path="res://src/objects/catch/catch.gd" id="2_ledfc"]
+
+[node name="Catch" type="TextureProgressBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+max_value = 360.0
+value = 30.0
+fill_mode = 4
+texture_under = ExtResource("1_bs3kj")
+texture_progress = ExtResource("1_bs3kj")
+tint_under = Color(0, 0, 0, 1)
+tint_over = Color(0, 0, 1, 0.211765)
+tint_progress = Color(0, 1, 0, 1)
+script = ExtResource("2_ledfc")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_bs3kj")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
