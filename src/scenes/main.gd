@@ -14,7 +14,7 @@ enum STATE {
 # TODO: add all new objects into dict
 @onready var objects: Dictionary = {
 	"menu": 	%MenuUI,
-	"throw": 	null,
+	"throw": 	%Throw,
 	"catch": 	null,
 	"pull": 	null,
 	"swim": 	%Swim,
@@ -35,6 +35,8 @@ func activate_object(new_state: STATE = game_state) -> void:
 			objects["menu"].activate()
 		STATE.Swimming:
 			objects["swim"].activate()
+		STATE.Throwing:
+			objects["throw"].activate()
 		_:
 			assert(false, "Incorrect state/object ot activate")
 
@@ -42,5 +44,5 @@ func activate_object(new_state: STATE = game_state) -> void:
 # TODO: for all new objects add connection
 # Connect functions to finished signals in objects
 func connect_objects() -> void:
-	objects["menu"].finished.connect(activate_object.bind(STATE.Swimming))
+	objects["menu"].finished.connect(activate_object.bind(STATE.Throwing))
 	#objects["swim"].finished.connect(finish_swim)

@@ -25,12 +25,13 @@ func _input(_event: InputEvent) -> void:
 		if value >= max_value - timing_error and value <= max_value + timing_error:
 			current_success_amount += 1
 			# TODO: 
-			# play_sound(success)
-			# play_animation(swim)
+			# play_sound(success) IN PLAYER
+			# play_animation(swim) IN PLAYER
 			if current_success_amount >= needed_success_amount:
-				finished.emit()
 				set_process(false)
 				set_process_input(false)
+				# TODO: wait for animation to finished
+				finished.emit()
 				visible = false
 		else:
 			# TODO: play_sound(error)
@@ -39,7 +40,7 @@ func _input(_event: InputEvent) -> void:
 
 
 func activate() -> void:
-	value = 0
+	value = 0.0
 	current_success_amount = 0
 	set_process(true)
 	set_process_input(true)
