@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b78tqecfajby1"]
+[gd_scene load_steps=5 format=3 uid="uid://b78tqecfajby1"]
 
 [ext_resource type="Texture2D" uid="uid://bp4r2t440ben4" path="res://icon.svg" id="1_jmvuk"]
 [ext_resource type="Script" path="res://src/scenes/main.gd" id="1_qemhp"]
+[ext_resource type="PackedScene" uid="uid://bvpxqvkd0nukg" path="res://src/objects/menu/menuUI.tscn" id="3_0dyu0"]
+[ext_resource type="PackedScene" uid="uid://duwni0ldto23s" path="res://src/objects/camera/animated_camera.tscn" id="4_t3oad"]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_qemhp")
@@ -15,6 +17,12 @@ texture = ExtResource("1_jmvuk")
 [node name="Sprite2D2" type="Sprite2D" parent="Temporary"]
 position = Vector2(648, 336)
 texture = ExtResource("1_jmvuk")
+flip_v = true
 
-[node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
-offset = Vector2(640, 360)
+[node name="AnimtedCamera" parent="." instance=ExtResource("4_t3oad")]
+
+[node name="MenuUi" parent="." instance=ExtResource("3_0dyu0")]
+offset_left = 601.0
+offset_top = -116.0
+offset_right = 680.0
+offset_bottom = -58.0
