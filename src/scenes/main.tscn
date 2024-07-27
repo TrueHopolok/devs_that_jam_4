@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b78tqecfajby1"]
+
+[ext_resource type="Texture2D" uid="uid://bp4r2t440ben4" path="res://icon.svg" id="1_jmvuk"]
+[ext_resource type="Script" path="res://src/scenes/main.gd" id="1_qemhp"]
+
+[node name="Main" type="Node2D" groups=["Main"]]
+script = ExtResource("1_qemhp")
+
+[node name="Temporary" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Temporary"]
+position = Vector2(636, -79)
+texture = ExtResource("1_jmvuk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Temporary"]
+position = Vector2(648, 336)
+texture = ExtResource("1_jmvuk")
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
+offset = Vector2(640, 360)
