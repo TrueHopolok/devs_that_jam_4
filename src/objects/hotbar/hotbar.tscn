@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfi1qw3u25bwt"]
+
+[ext_resource type="Script" path="res://src/objects/hotbar/hotbar.gd" id="1_bka47"]
+
+[node name="Hotbar" type="CanvasLayer"]
+script = ExtResource("1_bka47")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(350, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 240.0
+offset_right = 175.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
