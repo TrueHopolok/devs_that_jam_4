@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfi1qw3u25bwt"]
+[gd_scene load_steps=3 format=3 uid="uid://cfi1qw3u25bwt"]
 
 [ext_resource type="Script" path="res://src/objects/hotbar/hotbar.gd" id="1_bka47"]
+[ext_resource type="FontFile" uid="uid://35rxx3w8q1ll" path="res://assets/sprites/icons/rainyhearts.ttf" id="2_3jus2"]
 
 [node name="Hotbar" type="CanvasLayer"]
 script = ExtResource("1_bka47")
@@ -21,6 +22,8 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3jus2")
+theme_override_font_sizes/font_size = 60
 text = "You caught: {catched}"
 horizontal_alignment = 1
 
