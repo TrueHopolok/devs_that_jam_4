@@ -46,9 +46,7 @@ func _on_success_bar_value_changed(value: float) -> void:
 		visible = false
 
 
-
-
-func activate():
+func activate() -> void:
 	catch_area.activate()
 	fish_area.activate()
 	game_timer.start(game_length)

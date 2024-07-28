@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 		success_bar.value += delta
 
 
-func activate():
+func activate() -> void:
 	velocity = 0.0
 	position.y = MAX_BORDER
 	success_bar.value = 0.0

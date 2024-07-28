@@ -5,11 +5,11 @@ extends Node
 
 var amobient_sounds: Array[AudioStream] = [preload("res://assets/Ambient/PoliceSiren.mp3")] 
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	random.stream = amobient_sounds.pick_random()
 	random.play()
 
 
-func _on_random_finished():
+func _on_random_finished() -> void:
 	timer.wait_time = randi_range(60, 300)
 	timer.start()

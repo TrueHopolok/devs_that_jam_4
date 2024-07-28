@@ -2,8 +2,8 @@ extends CanvasLayer
 
 const text: String = "You caught: {catched}"
 
-@onready var label = $MarginContainer/Label
-@onready var timer = $Timer
+@onready var label: Label = $MarginContainer/Label
+@onready var timer: Timer = $Timer
 
 func _ready() -> void:
 	label.visible = false
