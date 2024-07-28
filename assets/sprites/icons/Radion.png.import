@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5wxg5sbnfmse"
-path="res://.godot/imported/succssess_outline.png-5e89d37e81399a83d5d31b3f873ab9cd.ctex"
+uid="uid://d2pyco5lr5q1c"
+path="res://.godot/imported/Radion.png-4cc4fb0feaede6ee5b00d3db367aae7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/progressbars/succssess_outline.png"
-dest_files=["res://.godot/imported/succssess_outline.png-5e89d37e81399a83d5d31b3f873ab9cd.ctex"]
+source_file="res://assets/sprites/icons/Radion.png"
+dest_files=["res://.godot/imported/Radion.png-4cc4fb0feaede6ee5b00d3db367aae7a.ctex"]
 
 [params]
 
