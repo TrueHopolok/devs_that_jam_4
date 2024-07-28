@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://b78tqecfajby1"]
+[gd_scene load_steps=15 format=3 uid="uid://b78tqecfajby1"]
 
 [ext_resource type="Script" path="res://src/scenes/main.gd" id="1_qemhp"]
 [ext_resource type="PackedScene" uid="uid://bumj617kou833" path="res://src/objects/paralax/background.tscn" id="2_3tnq7"]
 [ext_resource type="PackedScene" uid="uid://bvpxqvkd0nukg" path="res://src/objects/menu/menuUI.tscn" id="3_0dyu0"]
 [ext_resource type="PackedScene" uid="uid://duwni0ldto23s" path="res://src/objects/camera/animated_camera.tscn" id="4_t3oad"]
+[ext_resource type="AudioStream" uid="uid://cu5yvpdhyjlcn" path="res://assets/sounds/music/2moonlight.mp3" id="5_3vqe1"]
 [ext_resource type="PackedScene" uid="uid://cdls0wn1los4y" path="res://src/objects/swim/swim.tscn" id="5_qf4rx"]
 [ext_resource type="PackedScene" uid="uid://wjrdshwkrgu4" path="res://src/objects/throw/throw.tscn" id="6_e8e7n"]
 [ext_resource type="PackedScene" uid="uid://jwea255oi26" path="res://src/objects/music/music.tscn" id="7_0aa7d"]
@@ -22,6 +23,7 @@ script = ExtResource("1_qemhp")
 [node name="AnimtedCamera" parent="." instance=ExtResource("4_t3oad")]
 
 [node name="Music" parent="." instance=ExtResource("7_0aa7d")]
+stream = ExtResource("5_3vqe1")
 enabled_by_default = false
 
 [node name="AmbientSound" parent="." instance=ExtResource("7_wxg7q")]

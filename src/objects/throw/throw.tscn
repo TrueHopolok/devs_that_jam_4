@@ -76,3 +76,5 @@ libraries = {
 "": SubResource("AnimationLibrary_c543p")
 }
 autoplay = "RESET"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

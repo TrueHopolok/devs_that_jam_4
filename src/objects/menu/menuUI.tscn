@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://src/objects/menu/menuUI.gd" id="1_5syxi"]
 [ext_resource type="Texture2D" uid="uid://c010af1evokyu" path="res://assets/sprites/icons/Moonlight.png" id="2_c5fw8"]
 [ext_resource type="Texture2D" uid="uid://c4sq63bpe6a1m" path="res://assets/sprites/icons/play_button.png" id="2_yxu2r"]
+[ext_resource type="AudioStream" uid="uid://dw7a38e0ugsoj" path="res://assets/sounds/others/sound_play.mp3" id="3_pyiqu"]
 
 [node name="MenuUI" type="MarginContainer"]
 z_index = 20
@@ -25,3 +26,5 @@ layout_mode = 2
 texture_normal = ExtResource("2_yxu2r")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pyiqu")
