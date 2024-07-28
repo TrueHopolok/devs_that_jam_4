@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bo6mi80r7mxsu"
-path="res://.godot/imported/Owl.mp3-0beb8c268ce800aa49a819bb8d722b1f.mp3str"
+path="res://.godot/imported/Owl.mp3-ae2e8873bc3e844154233295489ea376.mp3str"
 
 [deps]
 
-source_file="res://assets/Ambient/Owl.mp3"
-dest_files=["res://.godot/imported/Owl.mp3-0beb8c268ce800aa49a819bb8d722b1f.mp3str"]
+source_file="res://assets/ambient/Owl.mp3"
+dest_files=["res://.godot/imported/Owl.mp3-ae2e8873bc3e844154233295489ea376.mp3str"]
 
 [params]
 

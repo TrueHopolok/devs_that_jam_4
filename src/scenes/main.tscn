@@ -43,7 +43,6 @@ offset_right = 1120.0
 offset_bottom = 400.0
 max_value = 1.7
 step = 0.001
-value = 0.6
 
 [node name="Throw" parent="." instance=ExtResource("6_e8e7n")]
 unique_name_in_owner = true

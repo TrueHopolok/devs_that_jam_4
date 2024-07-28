@@ -1,7 +1,7 @@
 extends Node2D
 
 const SAVE_FILE_PATH: String = "user://stats.yours"
-const MIN_FISHES: int = 5
+const MIN_FISHES: int = 3
 
 enum STATE {
 	InMenu,
@@ -20,7 +20,7 @@ enum STATE {
 	"swim": 	%Swim,
 }
 
-var fishes_left: int = 10
+var fishes_left: int = 1
 var game_state: STATE = STATE.InMenu
 var stats: Dictionary = {
 	"time": 0,
@@ -59,7 +59,7 @@ func connect_objects() -> void:
 	objects["swim"].finished.connect(func() -> void:
 		randomize()
 		fishes_left = randi_range(MIN_FISHES, MIN_FISHES * 2)
-		activate_object.bind(STATE.Throwing))
+		activate_object(STATE.Throwing))
 	objects["throw"].finished.connect(activate_object.bind(STATE.Catching))
 	objects["catch"].failed.connect(func() -> void:
 		stats["lost"] += 1
