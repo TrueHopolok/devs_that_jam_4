@@ -11,8 +11,8 @@ extends AudioStreamPlayer2D
 
 func _ready() -> void:
 	randomize()
+	play_next.shuffle()
 	if enabled_by_default:
-		play_next.shuffle()
 		stream = tracks[play_next.pop_front()]
 		play()
 
@@ -36,7 +36,4 @@ func _on_button_pressed() -> void:
 	if playing:
 		stop()
 	else:
-		play_next = range(len(tracks))		
-		play_next.shuffle()
-		stream = tracks[play_next.pop_front()]
-		play()
+		_on_finished()

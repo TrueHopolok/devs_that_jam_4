@@ -364,6 +364,7 @@ animations = [{
 }]
 
 [node name="Background" type="Node2D" groups=["Background"]]
+process_mode = 3
 script = ExtResource("1_v0mlp")
 move_curve = SubResource("Curve_ibrdu")
 
