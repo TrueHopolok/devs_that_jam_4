@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvpxqvkd0nukg"]
+[gd_scene load_steps=3 format=3 uid="uid://bvpxqvkd0nukg"]
 
 [ext_resource type="Script" path="res://src/objects/menu/menuUI.gd" id="1_5syxi"]
+[ext_resource type="Texture2D" uid="uid://bs6gfyy6jb6uk" path="res://assets/sprites/icons/PlayButton.png" id="2_yxu2r"]
 
 [node name="MenuUI" type="MarginContainer"]
 z_index = 20
@@ -17,6 +18,10 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Moonlight"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_yxu2r")
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
