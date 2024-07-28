@@ -9,6 +9,7 @@ signal failed
 @export_range(1, 50) var cycles_amount: int = 2
 @onready var timer: Timer = $Timer
 @onready var arrow: Sprite2D = $Arrow
+@onready var player: AnimatedSprite2D = get_tree().get_first_node_in_group("PlayerAnimation")
 
 func _ready() -> void:
 	set_process(false)
@@ -20,6 +21,8 @@ func _process(delta: float) -> void:
 	arrow.rotation_degrees += max_value / cycle_time * delta
 	if arrow.rotation_degrees >= radial_initial_angle + value * 2:
 		# TODO: play_sound(error)
+		player.play("fishing")
+		await player.animation_finished
 		failed.emit()
 		activate()
 
@@ -33,19 +36,22 @@ func _input(_event: InputEvent) -> void:
 			set_process(false)
 			set_process_input(false)
 			# TODO:
-			# update score(success) IN MAIN
-			# play_sounds(success) IN PLAYER
-			# play_animation(success) IN PLAYER
-			# wait till animation is finished
+			# play_sounds(success)
+			# wait till sound is finished
 			finished.emit()
 			visible = false
 		else:
 			# TODO: play_sound(error)
+			# wait till sound is finished
 			failed.emit()
 			activate()
 
 
 func _on_timer_timeout() -> void:
+	player.play("catching")
+	# TODO: 
+	# play_sound(warning)
+	# wait till sound is ended
 	randomize()
 	radial_initial_angle = randf_range(min_value, max_value)
 	arrow.rotation_degrees = radial_initial_angle + value * 2 - max_value * cycles_amount
@@ -55,6 +61,7 @@ func _on_timer_timeout() -> void:
 
 
 func activate() -> void:
+	player.play("fishing")
 	set_process(false)
 	set_process_input(false)
 	visible = false

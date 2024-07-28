@@ -2,7 +2,7 @@ extends Control
 
 @onready var main = get_tree().get_first_node_in_group("Main")
 @onready var stats: Label = %StatsLabel
-@onready var book: MarginContainer = %StatsContainer
+@onready var book: VBoxContainer = %StatsContainer
 
 const FISH_CAUGHT: String = "
 Time played: {time}

@@ -3,9 +3,10 @@ extends AudioStreamPlayer2D
 @export var enabled_by_default: bool
 
 @onready var tracks: Array[AudioStream] = [
-	preload("res://assets/temporary/1.mp3"), 
-	preload("res://assets/temporary/2.mp3"), 
-	preload("res://assets/temporary/3.mp3"),
+	preload("res://assets/sounds/temporary/1.mp3"), 
+	preload("res://assets/sounds/temporary/2.mp3"), 
+	preload("res://assets/sounds/temporary/3.mp3"),
+	preload("res://assets/sounds/temporary/4.mp3"),
 ]
 @onready var play_next: Array = range(len(tracks))
 

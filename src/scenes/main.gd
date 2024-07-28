@@ -20,7 +20,7 @@ enum STATE {
 	"swim": 	%Swim,
 }
 
-var fishes_left: int = 3
+var fishes_left: int = MIN_FISHES
 var game_state: STATE = STATE.InMenu
 var stats: Dictionary = {
 	"time": 0,
