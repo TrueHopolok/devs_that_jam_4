@@ -3,11 +3,11 @@ extends TextureProgressBar
 signal finished
 
 @onready var player: AnimatedSprite2D = get_tree().get_first_node_in_group("PlayerAnimation")
+@onready var appear: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	set_process(false)
 	set_process_input(false)
-	visible = false
 
 
 func _process(delta: float) -> void:
@@ -28,13 +28,15 @@ func _input(_event: InputEvent) -> void:
 		# TODO: play_sound(end)
 		player.play("throw_end")
 		await player.animation_finished
+		appear.play("disappear")
+		await appear.animation_finished
 		finished.emit()
-		visible = false
 
 
 func activate() -> void:
 	player.play("idle")
 	value = 0.0
+	appear.play("appear")
+	await appear.animation_finished
 	set_process(true)
 	set_process_input(true)
-	visible = true
