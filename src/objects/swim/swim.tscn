@@ -9,7 +9,7 @@
 z_index = 20
 offset_right = 32.0
 offset_bottom = 16.0
-scale = Vector2(5, 5)
+scale = Vector2(10, 10)
 max_value = 0.6
 step = 0.005
 value = 0.6

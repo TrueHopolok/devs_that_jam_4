@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends Control
 
 signal finished(name: String)
 signal failed
