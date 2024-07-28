@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5wxg5sbnfmse"
-path="res://.godot/imported/succssess_outline.png-5e89d37e81399a83d5d31b3f873ab9cd.ctex"
+uid="uid://14nic8euthge"
+path="res://.godot/imported/book.png-d7db15977ed99fb5e04bf9aeaab0c95f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/progressbars/succssess_outline.png"
-dest_files=["res://.godot/imported/succssess_outline.png-5e89d37e81399a83d5d31b3f873ab9cd.ctex"]
+source_file="res://assets/sprites/icons/book.png"
+dest_files=["res://.godot/imported/book.png-d7db15977ed99fb5e04bf9aeaab0c95f.ctex"]
 
 [params]
 

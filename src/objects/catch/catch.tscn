@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bww6dpaq1avw5"]
 
-[ext_resource type="Texture2D" uid="uid://e13yalthmb1u" path="res://assets/progressbars/catch_outline.png" id="1_b6oee"]
-[ext_resource type="Texture2D" uid="uid://5wxg5sbnfmse" path="res://assets/progressbars/succssess_outline.png" id="2_irf7h"]
+[ext_resource type="Texture2D" uid="uid://e13yalthmb1u" path="res://assets/sprites/progressbars/catch_outline.png" id="1_b6oee"]
+[ext_resource type="Texture2D" uid="uid://5wxg5sbnfmse" path="res://assets/sprites/progressbars/succssess_outline.png" id="2_irf7h"]
 [ext_resource type="Script" path="res://src/objects/catch/catch.gd" id="2_ledfc"]
 [ext_resource type="Texture2D" uid="uid://bnwsb36afhofm" path="res://assets/sprites/hand.png" id="3_e7md0"]
 
