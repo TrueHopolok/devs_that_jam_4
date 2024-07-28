@@ -24,7 +24,7 @@ tint_progress = Color(0, 1, 0, 1)
 script = ExtResource("2_ledfc")
 
 [node name="Arrow" type="Sprite2D" parent="."]
-position = Vector2(64, 63)
+position = Vector2(64, 64)
 scale = Vector2(2.605, 2.605)
 texture = ExtResource("3_e7md0")
 
