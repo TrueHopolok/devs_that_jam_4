@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://bedrieib543ak"]
+[gd_scene load_steps=17 format=3 uid="uid://bedrieib543ak"]
 
-[ext_resource type="Texture2D" uid="uid://bp4r2t440ben4" path="res://icon.svg" id="1_jf0g1"]
 [ext_resource type="Script" path="res://src/objects/pull/pull_main.gd" id="1_olxdt"]
 [ext_resource type="Script" path="res://src/objects/pull/catch_area.gd" id="2_rd4bb"]
 [ext_resource type="Texture2D" uid="uid://bh0imrpwbqv1u" path="res://assets/sprites/progressbars/bar.png" id="3_08pye"]
@@ -13,6 +12,18 @@ radius = 65.0057
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s4wps"]
 radius = 17.0872
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qalrx"]
+bg_color = Color(0.352941, 0.0784314, 0.054902, 0.141176)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj4fn"]
+bg_color = Color(0.585241, 0.140445, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eq8sn"]
+bg_color = Color(0.164706, 0.2, 0.176471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xpkd"]
+bg_color = Color(0, 0.427451, 0.180392, 1)
 
 [sub_resource type="Animation" id="Animation_ixrw5"]
 length = 0.001
@@ -77,11 +88,6 @@ offset_bottom = 360.0
 size_flags_vertical = 3
 script = ExtResource("1_olxdt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 0.000305176)
-scale = Vector2(1, 4.51563)
-texture = ExtResource("1_jf0g1")
-
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(6.48499e-05, 0.500305)
 scale = Vector2(3.9, 2.10545)
@@ -116,16 +122,19 @@ texture = ExtResource("5_vequx")
 [node name="TimeBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = -110.0
-offset_top = -236.0
-offset_right = -79.0
-offset_bottom = 277.0
+offset_left = -101.0
+offset_top = -272.0
+offset_right = -86.0
+offset_bottom = 272.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_qalrx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kj4fn")
 max_value = 1.0
 step = 0.001
-value = 1.0
+value = 0.5
 fill_mode = 3
+show_percentage = false
 
 [node name="GameTimer" type="Timer" parent="TimeBar"]
 unique_name_in_owner = true
@@ -134,15 +143,19 @@ one_shot = true
 [node name="SuccessBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 78.0
-offset_top = -236.0
-offset_right = 110.0
-offset_bottom = 277.0
+offset_left = 86.0
+offset_top = -274.0
+offset_right = 102.0
+offset_bottom = 274.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_eq8sn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2xpkd")
 max_value = 15.0
 step = 0.001
+value = 7.5
 fill_mode = 3
+show_percentage = false
 
 [node name="AnimationTimer" type="Timer" parent="."]
 unique_name_in_owner = true

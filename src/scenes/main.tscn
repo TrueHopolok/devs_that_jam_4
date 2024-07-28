@@ -51,8 +51,6 @@ offset_left = 1040.0
 offset_top = 333.0
 offset_right = 1168.0
 offset_bottom = 461.0
-min_catch_time = 1.0
-max_catch_time = 1.0
 
 [node name="Pull" parent="." instance=ExtResource("11_o46ln")]
 unique_name_in_owner = true

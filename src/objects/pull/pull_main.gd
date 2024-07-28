@@ -65,10 +65,9 @@ func activate() -> void:
 	player.play("pulling")
 	audio.stream = sounds["pulling"]
 	audio.play()
-	appear.play("appear")
-	await appear.animation_finished
 	catch_area.activate()
 	fish_area.activate()
 	game_timer.start(game_length)
 	set_process(true)
 	set_process_input(true)
+	appear.play("appear")

@@ -6,6 +6,13 @@ const MAX_SPEED: float = GRAVITY * 2
 const MIN_BORDER: float = -237
 const MAX_BORDER: float = 237
 
+@onready var sprite: Sprite2D = $Sprite2D2
+@onready var textures: Dictionary = {
+	"still": preload( "res://assets/sprites/Fish.png" ),
+	"up": preload( "res://assets/sprites/Fish_up.png" ),
+	"down": preload( "res://assets/sprites/Fish_down.png" ),
+}
+
 var target_position: float = 0.0
 var velocity: float = 0.0
 var going_up: bool = true
@@ -23,8 +30,14 @@ func _process(delta: float) -> void:
 	velocity = clampf(velocity, MIN_SPEED, MAX_SPEED)
 
 	if absf(velocity) >= GRAVITY / 2:
+		if velocity < 0.0:
+			sprite.texture = textures["up"]
+		else:
+			sprite.texture = textures["down"]
 		position.y += (velocity - GRAVITY / 2 * signf(velocity)) * delta
 		position.y = clampf(position.y, MIN_BORDER, MAX_BORDER)
+	else:
+		sprite.texture = textures["still"]
 
 	if position.y == MAX_BORDER and velocity > 0.0:
 		velocity = 0.0
