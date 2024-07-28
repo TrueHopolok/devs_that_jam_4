@@ -29,7 +29,7 @@ func _on_game_timer_timeout() -> void:
 	set_process_input(false)
 	visible = false
 	# TODO: play_sound(error)
-	player.play("")
+	player.play("fail")
 	await player.animation_finished
 	animation_timer.start(1.0)
 	await animation_timer.timeout
@@ -54,6 +54,7 @@ func _on_success_bar_value_changed(value: float) -> void:
 
 func activate() -> void:
 	player.play("pulling")
+	# TODO: play_sound(process)
 	catch_area.activate()
 	fish_area.activate()
 	game_timer.start(game_length)

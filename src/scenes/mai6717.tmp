@@ -1,0 +1,74 @@
+[gd_scene load_steps=14 format=3 uid="uid://b78tqecfajby1"]
+
+[ext_resource type="Script" path="res://src/scenes/main.gd" id="1_qemhp"]
+[ext_resource type="PackedScene" uid="uid://bumj617kou833" path="res://src/objects/paralax/background.tscn" id="2_3tnq7"]
+[ext_resource type="PackedScene" uid="uid://bvpxqvkd0nukg" path="res://src/objects/menu/menuUI.tscn" id="3_0dyu0"]
+[ext_resource type="PackedScene" uid="uid://duwni0ldto23s" path="res://src/objects/camera/animated_camera.tscn" id="4_t3oad"]
+[ext_resource type="PackedScene" uid="uid://cdls0wn1los4y" path="res://src/objects/swim/swim.tscn" id="5_qf4rx"]
+[ext_resource type="PackedScene" uid="uid://wjrdshwkrgu4" path="res://src/objects/throw/throw.tscn" id="6_e8e7n"]
+[ext_resource type="PackedScene" uid="uid://jwea255oi26" path="res://src/objects/music/music.tscn" id="7_0aa7d"]
+[ext_resource type="PackedScene" uid="uid://cbnytya7ep58b" path="res://src/objects/book/book.tscn" id="7_o4eth"]
+[ext_resource type="PackedScene" uid="uid://b6nbw0rlmvrqc" path="res://src/objects/ambient_sound/ambient_sound.tscn" id="7_wxg7q"]
+[ext_resource type="PackedScene" uid="uid://bww6dpaq1avw5" path="res://src/objects/catch/catch.tscn" id="8_81g5v"]
+[ext_resource type="PackedScene" uid="uid://bedrieib543ak" path="res://src/objects/pull/pull.tscn" id="11_o46ln"]
+[ext_resource type="PackedScene" uid="uid://cfi1qw3u25bwt" path="res://src/objects/hotbar/hotbar.tscn" id="12_et4ip"]
+[ext_resource type="PackedScene" uid="uid://cv2biqge1hyfm" path="res://src/objects/player/player.tscn" id="13_7bxmv"]
+
+[node name="Main" type="Node2D" groups=["Main"]]
+script = ExtResource("1_qemhp")
+
+[node name="Background" parent="." instance=ExtResource("2_3tnq7")]
+
+[node name="AnimtedCamera" parent="." instance=ExtResource("4_t3oad")]
+
+[node name="Music" parent="." instance=ExtResource("7_0aa7d")]
+position = Vector2(1172, 686)
+enabled_by_default = false
+
+[node name="AmbientSound" parent="." instance=ExtResource("7_wxg7q")]
+
+[node name="Book" parent="." instance=ExtResource("7_o4eth")]
+
+[node name="MenuUI" parent="." instance=ExtResource("3_0dyu0")]
+unique_name_in_owner = true
+offset_left = 949.0
+offset_top = 120.0
+offset_right = 1028.0
+offset_bottom = 178.0
+
+[node name="Swim" parent="." instance=ExtResource("5_qf4rx")]
+unique_name_in_owner = true
+offset_left = 951.0
+offset_top = 320.0
+offset_right = 983.0
+offset_bottom = 336.0
+max_value = 1.7
+step = 0.001
+
+[node name="Throw" parent="." instance=ExtResource("6_e8e7n")]
+unique_name_in_owner = true
+offset_left = 1021.0
+offset_top = 304.0
+offset_right = 1039.0
+offset_bottom = 324.0
+
+[node name="Catch" parent="." instance=ExtResource("8_81g5v")]
+unique_name_in_owner = true
+offset_left = 1040.0
+offset_top = 333.0
+offset_right = 1168.0
+offset_bottom = 461.0
+min_catch_time = 1.0
+max_catch_time = 1.0
+
+[node name="Pull" parent="." instance=ExtResource("11_o46ln")]
+unique_name_in_owner = true
+offset_left = 1114.0
+offset_top = 360.0
+offset_right = 1114.0
+offset_bottom = 360.0
+
+[node name="Hotbar" parent="." instance=ExtResource("12_et4ip")]
+
+[node name="Player" parent="." instance=ExtResource("13_7bxmv")]
+position = Vector2(640, 360)

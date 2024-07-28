@@ -13,6 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("click"):
 		if player.animation != "throw_start":
+			# TODO: play_sound(start)
 			player.play("throw_start")
 		value += delta
 
@@ -24,7 +25,7 @@ func _input(_event: InputEvent) -> void:
 			return
 		set_process(false)
 		set_process_input(false)
-		# TODO: play_sound(success)
+		# TODO: play_sound(end)
 		player.play("throw_end")
 		await player.animation_finished
 		finished.emit()
@@ -32,6 +33,7 @@ func _input(_event: InputEvent) -> void:
 
 
 func activate() -> void:
+	player.play("idle")
 	value = 0.0
 	set_process(true)
 	set_process_input(true)

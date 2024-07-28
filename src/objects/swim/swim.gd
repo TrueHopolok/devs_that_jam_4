@@ -18,9 +18,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	value += delta
 	if value > max_value + timing_error:
-		# TODO: 
-		# play_sound(error)
-		# wait till sound is finished
 		value = 0.0
 
 
@@ -37,13 +34,12 @@ func _input(_event: InputEvent) -> void:
 				await player.animation_finished
 				finished.emit()
 				visible = false
-		else:
-			# TODO: play_sound(error)
-			pass
 		value = 0.0
 
 
 func activate() -> void:
+	player.play("swimming")
+	player.stop()
 	value = 0.0
 	current_success_amount = 0
 	set_process(true)
