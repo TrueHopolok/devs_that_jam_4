@@ -7,10 +7,11 @@
 
 [node name="Catch" type="TextureProgressBar"]
 z_index = 20
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -96.0
+offset_top = -96.0
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
 size_flags_vertical = 6
 max_value = 360.0
@@ -22,7 +23,7 @@ script = ExtResource("2_ledfc")
 
 [node name="Arrow" type="Sprite2D" parent="."]
 position = Vector2(64, 64)
-scale = Vector2(2.605, 3.32)
+scale = Vector2(1.3, 2)
 texture = ExtResource("3_e7md0")
 
 [node name="Timer" type="Timer" parent="."]

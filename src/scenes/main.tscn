@@ -22,7 +22,6 @@ script = ExtResource("1_qemhp")
 [node name="AnimtedCamera" parent="." instance=ExtResource("4_t3oad")]
 
 [node name="Music" parent="." instance=ExtResource("7_0aa7d")]
-position = Vector2(1240, 680)
 enabled_by_default = false
 
 [node name="AmbientSound" parent="." instance=ExtResource("7_wxg7q")]
