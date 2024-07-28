@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4sq63bpe6a1m"
-path="res://.godot/imported/PlayButton.png-0f53d7a3836231ea2cb7dd389c66c981.ctex"
+uid="uid://d2pyco5lr5q1c"
+path="res://.godot/imported/radio.png-7df84f390b3bdd062e5cfbc0436752f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/PlayButton.png"
-dest_files=["res://.godot/imported/PlayButton.png-0f53d7a3836231ea2cb7dd389c66c981.ctex"]
+source_file="res://assets/sprites/icons/radio.png"
+dest_files=["res://.godot/imported/radio.png-7df84f390b3bdd062e5cfbc0436752f1.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/objects/menu/menuUI.gd" id="1_5syxi"]
 [ext_resource type="Texture2D" uid="uid://c010af1evokyu" path="res://assets/sprites/icons/Moonlight.png" id="2_c5fw8"]
-[ext_resource type="Texture2D" uid="uid://c4sq63bpe6a1m" path="res://assets/sprites/icons/PlayButton.png" id="2_yxu2r"]
+[ext_resource type="Texture2D" uid="uid://c4sq63bpe6a1m" path="res://assets/sprites/icons/play_button.png" id="2_yxu2r"]
 
 [node name="MenuUI" type="MarginContainer"]
 z_index = 20
@@ -15,7 +15,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_5syxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-30, -71)
+position = Vector2(-25, -60)
 scale = Vector2(2, 2)
 texture = ExtResource("2_c5fw8")
 centered = false
