@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pyco5lr5q1c"
-path="res://.godot/imported/Radion.png-4cc4fb0feaede6ee5b00d3db367aae7a.ctex"
+uid="uid://c010af1evokyu"
+path="res://.godot/imported/Moonlight.png-370fbe82d235089eb0566e8a9f25dbb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/Radion.png"
-dest_files=["res://.godot/imported/Radion.png-4cc4fb0feaede6ee5b00d3db367aae7a.ctex"]
+source_file="res://assets/sprites/icons/Moonlight.png"
+dest_files=["res://.godot/imported/Moonlight.png-370fbe82d235089eb0566e8a9f25dbb2.ctex"]
 
 [params]
 
