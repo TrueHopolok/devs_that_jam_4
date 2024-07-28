@@ -1,14 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdls0wn1los4y"]
 
 [ext_resource type="Script" path="res://src/objects/swim/swim.gd" id="1_4gboq"]
-[ext_resource type="Texture2D" uid="uid://bb1kpxfsmopau" path="res://assets/progressbars/line_empty.png" id="1_bwpwj"]
-[ext_resource type="Texture2D" uid="uid://bkiy85iwol8va" path="res://assets/progressbars/line_border.png" id="2_by21c"]
-[ext_resource type="Texture2D" uid="uid://17aapbu6cjsx" path="res://assets/progressbars/line_full_noborder.png" id="3_emq2h"]
+[ext_resource type="Texture2D" uid="uid://bb1kpxfsmopau" path="res://assets/sprites/progressbars/line_empty.png" id="1_bwpwj"]
+[ext_resource type="Texture2D" uid="uid://bkiy85iwol8va" path="res://assets/sprites/progressbars/line_border.png" id="2_by21c"]
+[ext_resource type="Texture2D" uid="uid://17aapbu6cjsx" path="res://assets/sprites/progressbars/line_full_noborder.png" id="3_emq2h"]
 
 [node name="Swim" type="TextureProgressBar"]
 z_index = 20
-offset_right = 32.0
-offset_bottom = 16.0
+offset_left = -160.0
+offset_top = -80.0
+offset_right = -128.0
+offset_bottom = -64.0
 scale = Vector2(10, 10)
 max_value = 0.6
 step = 0.005

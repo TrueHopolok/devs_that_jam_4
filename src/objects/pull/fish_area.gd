@@ -3,8 +3,8 @@ extends Area2D
 const GRAVITY: float = 200.0
 const MIN_SPEED: float = GRAVITY * -2
 const MAX_SPEED: float = GRAVITY * 2
-const MIN_BORDER: float = 145
-const MAX_BORDER: float = 575
+const MIN_BORDER: float = -237
+const MAX_BORDER: float = 237
 
 var target_position: float = 0.0
 var velocity: float = 0.0

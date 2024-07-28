@@ -4,7 +4,8 @@ extends Node
 @onready var timer: Timer = $Timer
 
 const AMBIENT_SOUNDS: Array[AudioStream] = [
-	preload("res://assets/Ambient/PoliceSiren.mp3"),
+	preload("res://assets/sounds/ambient/PoliceSiren.mp3"),
+	preload("res://assets/sounds/ambient/Owl.mp3"),
 ] 
 
 func _on_timer_timeout() -> void:

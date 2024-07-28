@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bp4r2t440ben4" path="res://icon.svg" id="1_jf0g1"]
 [ext_resource type="Script" path="res://src/objects/pull/pull_main.gd" id="1_olxdt"]
 [ext_resource type="Script" path="res://src/objects/pull/catch_area.gd" id="2_rd4bb"]
-[ext_resource type="Texture2D" uid="uid://bh0imrpwbqv1u" path="res://assets/progressbars/bar.png" id="3_08pye"]
-[ext_resource type="Texture2D" uid="uid://461o6cj0p7ok" path="res://assets/progressbars/Fishing rod.png" id="4_dockv"]
+[ext_resource type="Texture2D" uid="uid://bh0imrpwbqv1u" path="res://assets/sprites/progressbars/bar.png" id="3_08pye"]
+[ext_resource type="Texture2D" uid="uid://461o6cj0p7ok" path="res://assets/sprites/progressbars/Fishing rod.png" id="4_dockv"]
 [ext_resource type="Script" path="res://src/objects/pull/fish_area.gd" id="4_egmtj"]
 [ext_resource type="Texture2D" uid="uid://ujwj4acyjl2m" path="res://assets/sprites/Fish.png" id="5_vequx"]
 
@@ -17,100 +17,80 @@ radius = 17.0872
 [node name="Pull" type="Control"]
 z_index = 20
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 size_flags_vertical = 3
 script = ExtResource("1_olxdt")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 2
-offset_bottom = 720.0
-size_flags_vertical = 3
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0.000305176)
+scale = Vector2(1, 4.51563)
+texture = ExtResource("1_jf0g1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(6.48499e-05, 0.500305)
+scale = Vector2(3.9, 2.10545)
+texture = ExtResource("3_08pye")
+
+[node name="CatchArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+monitorable = false
+script = ExtResource("2_rd4bb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatchArea"]
+shape = SubResource("CircleShape2D_rb8b0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CatchArea"]
+scale = Vector2(3.9375, 3.9375)
+texture = ExtResource("4_dockv")
+
+[node name="FishArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 0
+monitoring = false
+script = ExtResource("4_egmtj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishArea"]
+shape = SubResource("CircleShape2D_s4wps")
+
+[node name="Sprite2D2" type="Sprite2D" parent="FishArea"]
+scale = Vector2(4.92647, 4.92647)
+texture = ExtResource("5_vequx")
 
 [node name="TimeBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 4.0
-offset_right = 425.0
-offset_bottom = 720.0
+offset_left = -110.0
+offset_top = -236.0
+offset_right = -79.0
+offset_bottom = 277.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
+fill_mode = 3
 
 [node name="GameTimer" type="Timer" parent="TimeBar"]
 unique_name_in_owner = true
 one_shot = true
 
-[node name="GameConatiner" type="Control" parent="."]
-layout_mode = 2
-anchors_preset = 0
-offset_left = 429.0
-offset_right = 850.0
-offset_bottom = 720.0
-size_flags_horizontal = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="GameConatiner"]
-position = Vector2(175, 360)
-scale = Vector2(1, 4.51563)
-texture = ExtResource("1_jf0g1")
-
-[node name="Sprite2D2" type="Sprite2D" parent="GameConatiner"]
-position = Vector2(175, 360.5)
-scale = Vector2(3.9, 2.10545)
-texture = ExtResource("3_08pye")
-
-[node name="CatchArea" type="Area2D" parent="GameConatiner"]
-unique_name_in_owner = true
-position = Vector2(175, 360)
-collision_layer = 0
-monitorable = false
-script = ExtResource("2_rd4bb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameConatiner/CatchArea"]
-shape = SubResource("CircleShape2D_rb8b0")
-
-[node name="Sprite2D2" type="Sprite2D" parent="GameConatiner/CatchArea"]
-position = Vector2(-5.72205e-06, -5.72205e-06)
-scale = Vector2(3.9375, 3.9375)
-texture = ExtResource("4_dockv")
-
-[node name="FishArea" type="Area2D" parent="GameConatiner"]
-unique_name_in_owner = true
-position = Vector2(175, 360)
-collision_mask = 0
-monitoring = false
-script = ExtResource("4_egmtj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameConatiner/FishArea"]
-shape = SubResource("CircleShape2D_s4wps")
-
-[node name="Sprite2D2" type="Sprite2D" parent="GameConatiner/FishArea"]
-position = Vector2(-1.00002, 1.99999)
-scale = Vector2(4.92647, 4.92647)
-texture = ExtResource("5_vequx")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2
-offset_left = 854.0
-offset_right = 854.0
-offset_bottom = 720.0
-size_flags_vertical = 3
-
 [node name="SuccessBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 858.0
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_left = 78.0
+offset_top = -236.0
+offset_right = 110.0
+offset_bottom = 277.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 max_value = 15.0
 step = 0.001
+fill_mode = 3
+
+[node name="AnimationTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
 
 [connection signal="timeout" from="TimeBar/GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="value_changed" from="SuccessBar" to="." method="_on_success_bar_value_changed"]

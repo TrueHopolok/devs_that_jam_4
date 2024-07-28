@@ -3,8 +3,8 @@ extends Area2D
 const GRAVITY: float = 400.0
 const MIN_SPEED: float = GRAVITY * -2
 const MAX_SPEED: float = GRAVITY *  2
-const MIN_BORDER: float = 145
-const MAX_BORDER: float = 575
+const MIN_BORDER: float = -219
+const MAX_BORDER: float = 219
 
 @onready var success_bar: ProgressBar = %SuccessBar
 
