@@ -154,5 +154,7 @@ libraries = {
 }
 autoplay = "RESET"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="timeout" from="TimeBar/GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="value_changed" from="SuccessBar" to="." method="_on_success_bar_value_changed"]

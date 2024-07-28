@@ -8,6 +8,11 @@ extends AudioStreamPlayer
 	preload( "res://assets/sounds/music/moon4_1.mp3" ),
 ]
 @onready var play_next: Array = range(len(tracks))
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+@onready var sound_open: Dictionary = {
+	true: preload( "res://assets/sounds/others/sound_radio_on.mp3" ),
+	false: preload( "res://assets/sounds/others/sound_radio_off.mp3" ),
+}
 
 func _ready() -> void:
 	randomize()
@@ -35,5 +40,9 @@ func _on_finished() -> void:
 func _on_button_pressed() -> void:
 	if playing:
 		stop()
+		audio.stream = sound_open[false]
+		audio.play()
 	else:
 		_on_finished()
+		audio.stream = sound_open[true]
+		audio.play()

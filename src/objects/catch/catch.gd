@@ -10,6 +10,11 @@ signal failed
 @onready var timer: Timer = $Timer
 @onready var arrow: Sprite2D = $Arrow
 @onready var player: AnimatedSprite2D = get_tree().get_first_node_in_group("PlayerAnimation")
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+@onready var sounds: Dictionary = {
+	"error": preload( "res://assets/sounds/others/sound_catch_error.mp3" ),
+	"warning": preload( "res://assets/sounds/others/sound_catch_warning.mp3" ),
+}
 
 func _ready() -> void:
 	set_process(false)
@@ -20,7 +25,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	arrow.rotation_degrees += max_value / cycle_time * delta
 	if arrow.rotation_degrees >= radial_initial_angle + value * 2:
-		# TODO: play_sound(error)
+		audio.stream = sounds["error"]
+		audio.play()
 		failed.emit()
 		activate()
 
@@ -33,23 +39,19 @@ func _input(_event: InputEvent) -> void:
 		if degrees >= radial_initial_angle and degrees <= radial_initial_angle + value:
 			set_process(false)
 			set_process_input(false)
-			# TODO:
-			# play_sounds(success)
-			# wait till sound is finished
 			finished.emit()
 			visible = false
 		else:
-			# TODO: play_sound(error)
-			# wait till sound is finished
+			audio.stream = sounds["error"]
+			audio.play()
 			failed.emit()
 			activate()
 
 
 func _on_timer_timeout() -> void:
 	player.play("catching")
-	# TODO: 
-	# play_sound(warning)
-	# wait till sound is ended
+	audio.stream = sounds["warning"]
+	audio.play()
 	randomize()
 	radial_initial_angle = randf_range(min_value, max_value)
 	arrow.rotation_degrees = radial_initial_angle + value * 2 - max_value * cycles_amount

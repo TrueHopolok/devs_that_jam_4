@@ -3,7 +3,13 @@ extends Control
 @onready var main = get_tree().get_first_node_in_group("Main")
 @onready var stats: Label = %StatsLabel
 @onready var book: VBoxContainer = %StatsContainer
-@onready var book_open = $BookOpen
+@onready var book_open: Sprite2D = $BookOpen
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+@onready var sound_open: Dictionary = {
+	true: preload( "res://assets/sounds/others/sound_book_open.mp3" ),
+	false: preload( "res://assets/sounds/others/sound_book_close.mp3" ),
+}
+var sound_status: bool = true
 
 const FISH_CAUGHT: String = "
 Time played: {time}
@@ -16,6 +22,9 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
+	audio.stream = sound_open[sound_status]
+	audio.play()
+	sound_status = not sound_status
 	stats.text = FISH_CAUGHT.format({
 		"time": main.stats["time"], 
 		"catched": main.stats["catched"], 

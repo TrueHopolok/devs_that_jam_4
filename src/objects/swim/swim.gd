@@ -7,6 +7,7 @@ signal finished
 @onready var background: Node2D = get_tree().get_first_node_in_group("Background")
 @onready var player: AnimatedSprite2D = get_tree().get_first_node_in_group("PlayerAnimation")
 @onready var appear: AnimationPlayer = $AnimationPlayer
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
 var current_success_amount: int = 0
 
@@ -26,7 +27,7 @@ func _input(_event: InputEvent) -> void:
 		if value >= max_value - timing_error and value <= max_value + timing_error:
 			current_success_amount += 1
 			background.move()
-			# TODO: play_sound(success) IN PLAYER
+			audio.play()
 			player.play("swimming")
 			if current_success_amount >= needed_success_amount:
 				set_process(false)

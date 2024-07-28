@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvpxqvkd0nukg"]
+[gd_scene load_steps=4 format=3 uid="uid://bvpxqvkd0nukg"]
 
 [ext_resource type="Script" path="res://src/objects/menu/menuUI.gd" id="1_5syxi"]
 [ext_resource type="Texture2D" uid="uid://c4sq63bpe6a1m" path="res://assets/sprites/icons/PlayButton.png" id="2_yxu2r"]
+[ext_resource type="AudioStream" uid="uid://dw7a38e0ugsoj" path="res://assets/sounds/others/sound_play.mp3" id="3_pyiqu"]
 
 [node name="MenuUI" type="MarginContainer"]
 z_index = 20
@@ -23,5 +24,8 @@ text = "Moonlight"
 [node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_yxu2r")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pyiqu")
 
 [connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

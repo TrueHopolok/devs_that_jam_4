@@ -6,6 +6,7 @@
 
 [node name="Book" type="Control"]
 process_mode = 3
+z_index = 100
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_bpt64")
@@ -60,5 +61,7 @@ z_index = 20
 position = Vector2(646, 420)
 scale = Vector2(8, 8)
 texture = ExtResource("3_lem6t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

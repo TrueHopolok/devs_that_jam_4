@@ -13,6 +13,12 @@ signal failed
 @onready var animation_timer: Timer = %AnimationTimer
 @onready var player: AnimatedSprite2D = get_tree().get_first_node_in_group("PlayerAnimation")
 @onready var appear: AnimationPlayer = $AnimationPlayer
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+@onready var sounds: Dictionary = {
+	"pulling": preload( "res://assets/sounds/others/sound_pulling.mp3" ),
+	"fail": preload( "res://assets/sounds/others/sound_pull_error.mp3" ),
+	"success": preload( "res://assets/sounds/others/sound_pull_success.mp3" ),
+}
 
 func _ready() -> void:
 	set_process(false)
@@ -28,7 +34,8 @@ func _on_game_timer_timeout() -> void:
 	set_process_input(false)
 	appear.play("disappear")
 	await appear.animation_finished
-	# TODO: play_sound(error)
+	audio.stream = sounds["fail"]
+	audio.play()
 	player.play("fail")
 	await player.animation_finished
 	animation_timer.start(1.0)
@@ -45,7 +52,8 @@ func _on_success_bar_value_changed(value: float) -> void:
 		set_process_input(false)
 		appear.play("disappear")
 		await appear.animation_finished
-		# TODO: play_sound(success)
+		audio.stream = sounds["success"]
+		audio.play()
 		player.play("success")
 		await player.animation_finished
 		animation_timer.start(1.0)
@@ -55,7 +63,8 @@ func _on_success_bar_value_changed(value: float) -> void:
 
 func activate() -> void:
 	player.play("pulling")
-	# TODO: play_sound(process)
+	audio.stream = sounds["pulling"]
+	audio.play()
 	appear.play("appear")
 	await appear.animation_finished
 	catch_area.activate()

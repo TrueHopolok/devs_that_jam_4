@@ -22,5 +22,7 @@ icon = ExtResource("3_d3o3a")
 icon_alignment = 1
 expand_icon = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

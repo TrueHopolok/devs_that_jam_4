@@ -29,4 +29,6 @@ texture = ExtResource("3_e7md0")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
