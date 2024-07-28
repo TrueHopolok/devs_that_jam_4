@@ -7,5 +7,12 @@
 process_mode = 3
 stream = ExtResource("1_eal4o")
 script = ExtResource("1_4w3p1")
+enabled_by_default = true
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Toggle Radio"
 
 [connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

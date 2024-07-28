@@ -1,18 +1,20 @@
 extends AudioStreamPlayer2D
 
+@export var enabled_by_default: bool
+
 @onready var tracks: Array[AudioStream] = [
 	preload("res://assets/temporary/1.mp3"), 
 	preload("res://assets/temporary/2.mp3"), 
 	preload("res://assets/temporary/3.mp3"),
 ]
-
 @onready var play_next: Array = range(len(tracks))
 
 func _ready() -> void:
 	randomize()
-	play_next.shuffle()
-	stream = tracks[play_next.pop_front()]
-	play()
+	if enabled_by_default:
+		play_next.shuffle()
+		stream = tracks[play_next.pop_front()]
+		play()
 
 
 func _on_finished() -> void:
@@ -28,3 +30,13 @@ func _on_finished() -> void:
 		return
 	stream = tracks[play_next.pop_front()]
 	play()
+
+
+func _on_button_pressed():
+	if playing:
+		stop()
+	else:
+		play_next = range(len(tracks))		
+		play_next.shuffle()
+		stream = tracks[play_next.pop_front()]
+		play()
