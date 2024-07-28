@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var stats: Label = %StatsLabel
 @onready var book: MarginContainer = %StatsContainer
 
-const fish_catched_t: String = "
+const FISH_CAUGHT: String = "
 Time played: {time}
 Fishes catched: {catched}
 Fishes lost: {lost}"
@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	stats.text = fish_catched_t.format({
+	stats.text = FISH_CAUGHT.format({
 		"time": main.stats["time"], 
 		"catched": main.stats["catched"], 
 		"lost": main.stats["lost"]})

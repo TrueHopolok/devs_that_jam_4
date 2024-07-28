@@ -10,7 +10,7 @@ enum STATE {
 	Swimming,
 }
 
-@onready var hotbar = $Hotbar
+@onready var hotbar: CanvasLayer = $Hotbar
 @onready var objects: Dictionary = {
 	"menu": 	%MenuUI,
 	"throw": 	%Throw,
@@ -26,6 +26,7 @@ var stats: Dictionary = {
 	"lost": 0,
 	"catched": 0,
 }
+
 
 func _ready() -> void:
 	connect_objects()

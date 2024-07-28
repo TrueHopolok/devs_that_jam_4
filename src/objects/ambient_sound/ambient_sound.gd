@@ -3,10 +3,10 @@ extends Node
 @onready var random: AudioStreamPlayer2D = $Random
 @onready var timer: Timer = $Timer
 
-var amobient_sounds: Array[AudioStream] = [preload("res://assets/Ambient/PoliceSiren.mp3")] 
+const AMBIENT_SOUNDS: Array[AudioStream] = [preload("res://assets/Ambient/PoliceSiren.mp3")] 
 
 func _on_timer_timeout() -> void:
-	random.stream = amobient_sounds.pick_random()
+	random.stream = AMBIENT_SOUNDS.pick_random()
 	random.play()
 
 

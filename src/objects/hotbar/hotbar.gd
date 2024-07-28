@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const text: String = "You caught: {catched}"
+const TEXT: String = "You caught: {catched}"
 
 @onready var label: Label = $MarginContainer/Label
 @onready var timer: Timer = $Timer
@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func display(name: String) -> void:
 	label.visible = true	
-	label.text = text.format({"catched": name})
+	label.text = TEXT.format({"catched": name})
 	timer.start(10)
 
 

@@ -1,6 +1,6 @@
 extends Node
 
-const fish_names: Array[String] = [
+const FISH_NAMES: Array[String] = [
 	"Salmon",
 	"Tuna",
 	"Trout",
@@ -13,7 +13,7 @@ const fish_names: Array[String] = [
 	"Snapper"
 ]
 
-const adjective: Array[String] = [
+const ADJECTIVES: Array[String] = [
 	"Aquatic",
 	"Scaly",
 	"Slippery",
@@ -58,4 +58,4 @@ const adjective: Array[String] = [
 
 
 func next() -> String:
-	return adjective.pick_random() + " " + fish_names.pick_random()
+	return ADJECTIVES.pick_random() + " " + FISH_NAMES.pick_random()
