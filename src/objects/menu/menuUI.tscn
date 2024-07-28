@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvpxqvkd0nukg"]
 
 [ext_resource type="Script" path="res://src/objects/menu/menuUI.gd" id="1_5syxi"]
-[ext_resource type="Texture2D" uid="uid://bs6gfyy6jb6uk" path="res://assets/sprites/icons/PlayButton.png" id="2_yxu2r"]
+[ext_resource type="Texture2D" uid="uid://c4sq63bpe6a1m" path="res://assets/sprites/icons/PlayButton.png" id="2_yxu2r"]
 
 [node name="MenuUI" type="MarginContainer"]
 z_index = 20
@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 script = ExtResource("1_5syxi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -23,10 +24,4 @@ text = "Moonlight"
 layout_mode = 2
 texture_normal = ExtResource("2_yxu2r")
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-focus_mode = 0
-text = "Play
-"
-
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
