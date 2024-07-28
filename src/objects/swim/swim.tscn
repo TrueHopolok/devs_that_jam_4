@@ -1,16 +1,68 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdls0wn1los4y"]
+[gd_scene load_steps=9 format=3 uid="uid://cdls0wn1los4y"]
 
 [ext_resource type="Script" path="res://src/objects/swim/swim.gd" id="1_4gboq"]
 [ext_resource type="Texture2D" uid="uid://bb1kpxfsmopau" path="res://assets/sprites/progressbars/line_empty.png" id="1_bwpwj"]
 [ext_resource type="Texture2D" uid="uid://bkiy85iwol8va" path="res://assets/sprites/progressbars/line_border.png" id="2_by21c"]
 [ext_resource type="Texture2D" uid="uid://17aapbu6cjsx" path="res://assets/sprites/progressbars/line_full_noborder.png" id="3_emq2h"]
 
+[sub_resource type="Animation" id="Animation_g6j7m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1300, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_q642l"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1300, 360), Vector2(940, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_r58h4"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(940, 360), Vector2(1300, 360)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_04rba"]
+_data = {
+"RESET": SubResource("Animation_g6j7m"),
+"appear": SubResource("Animation_q642l"),
+"disappear": SubResource("Animation_r58h4")
+}
+
 [node name="Swim" type="TextureProgressBar"]
 z_index = 20
-offset_left = -160.0
-offset_top = -80.0
-offset_right = -128.0
-offset_bottom = -64.0
+offset_left = 1300.0
+offset_top = 360.0
+offset_right = 1332.0
+offset_bottom = 376.0
 scale = Vector2(10, 10)
 max_value = 0.6
 step = 0.005
@@ -21,3 +73,9 @@ texture_over = ExtResource("2_by21c")
 texture_progress = ExtResource("3_emq2h")
 texture_progress_offset = Vector2(2, 2)
 script = ExtResource("1_4gboq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_04rba")
+}
+autoplay = "RESET"

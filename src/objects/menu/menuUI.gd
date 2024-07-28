@@ -11,11 +11,10 @@ func _ready() -> void:
 			finished.emit()
 			queue_free())
 
-
-func _on_button_pressed() -> void:
-	camera.play("zoomout")
-	visible = false
-
-
 func activate() -> void:
 	camera.play("default")
+
+
+func _on_texture_button_pressed():
+	camera.play("zoomout")
+	visible = false

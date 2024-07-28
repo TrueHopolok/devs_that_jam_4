@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bedrieib543ak"]
+[gd_scene load_steps=14 format=3 uid="uid://bedrieib543ak"]
 
 [ext_resource type="Texture2D" uid="uid://bp4r2t440ben4" path="res://icon.svg" id="1_jf0g1"]
 [ext_resource type="Script" path="res://src/objects/pull/pull_main.gd" id="1_olxdt"]
@@ -14,10 +14,66 @@ radius = 65.0057
 [sub_resource type="CircleShape2D" id="CircleShape2D_s4wps"]
 radius = 17.0872
 
+[sub_resource type="Animation" id="Animation_ixrw5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1400, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_o545k"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1400, 360), Vector2(1120, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_ikg2x"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1120, 360), Vector2(1400, 360)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8tu3l"]
+_data = {
+"RESET": SubResource("Animation_ixrw5"),
+"appear": SubResource("Animation_o545k"),
+"disappear": SubResource("Animation_ikg2x")
+}
+
 [node name="Pull" type="Control"]
 z_index = 20
 layout_mode = 3
 anchors_preset = 0
+offset_left = 1400.0
+offset_top = 360.0
+offset_right = 1400.0
+offset_bottom = 360.0
 size_flags_vertical = 3
 script = ExtResource("1_olxdt")
 
@@ -91,6 +147,12 @@ fill_mode = 3
 [node name="AnimationTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8tu3l")
+}
+autoplay = "RESET"
 
 [connection signal="timeout" from="TimeBar/GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="value_changed" from="SuccessBar" to="." method="_on_success_bar_value_changed"]

@@ -1,6 +1,6 @@
 extends Node
 
-@onready var random: AudioStreamPlayer2D = $Random
+@onready var random: AudioStreamPlayer = $Random
 @onready var timer: Timer = $Timer
 
 const AMBIENT_SOUNDS: Array[AudioStream] = [
