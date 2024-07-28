@@ -22,7 +22,6 @@ script = ExtResource("1_qemhp")
 [node name="AnimtedCamera" parent="." instance=ExtResource("4_t3oad")]
 
 [node name="Music" parent="." instance=ExtResource("7_0aa7d")]
-position = Vector2(1240, 680)
 enabled_by_default = false
 
 [node name="AmbientSound" parent="." instance=ExtResource("7_wxg7q")]
@@ -38,19 +37,11 @@ offset_bottom = 178.0
 
 [node name="Swim" parent="." instance=ExtResource("5_qf4rx")]
 unique_name_in_owner = true
-offset_left = 951.0
-offset_top = 320.0
-offset_right = 983.0
-offset_bottom = 336.0
 max_value = 1.7
 step = 0.001
 
 [node name="Throw" parent="." instance=ExtResource("6_e8e7n")]
 unique_name_in_owner = true
-offset_left = 1021.0
-offset_top = 304.0
-offset_right = 1039.0
-offset_bottom = 324.0
 
 [node name="Catch" parent="." instance=ExtResource("8_81g5v")]
 unique_name_in_owner = true
@@ -63,10 +54,6 @@ max_catch_time = 1.0
 
 [node name="Pull" parent="." instance=ExtResource("11_o46ln")]
 unique_name_in_owner = true
-offset_left = 1114.0
-offset_top = 360.0
-offset_right = 1114.0
-offset_bottom = 360.0
 
 [node name="Hotbar" parent="." instance=ExtResource("12_et4ip")]
 

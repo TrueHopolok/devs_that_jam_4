@@ -8,11 +8,11 @@
 process_mode = 3
 script = ExtResource("1_b6ilg")
 
-[node name="Main" type="AudioStreamPlayer2D" parent="."]
+[node name="Main" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_fn7eq")
 autoplay = true
 
-[node name="Random" type="AudioStreamPlayer2D" parent="."]
+[node name="Random" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_huexy")
 volume_db = -5.0
 

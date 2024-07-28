@@ -12,12 +12,11 @@ signal failed
 @onready var fish_area: Area2D = %FishArea
 @onready var animation_timer: Timer = %AnimationTimer
 @onready var player: AnimatedSprite2D = get_tree().get_first_node_in_group("PlayerAnimation")
-
+@onready var appear: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	set_process(false)
 	set_process_input(false)
-	visible = false
 
 
 func _process(delta: float) -> void:
@@ -27,7 +26,8 @@ func _process(delta: float) -> void:
 func _on_game_timer_timeout() -> void:
 	set_process(false)
 	set_process_input(false)
-	visible = false
+	appear.play("disappear")
+	await appear.animation_finished
 	# TODO: play_sound(error)
 	player.play("fail")
 	await player.animation_finished
@@ -43,7 +43,8 @@ func _on_success_bar_value_changed(value: float) -> void:
 		fish_area.deactivate()
 		set_process(false)
 		set_process_input(false)
-		visible = false
+		appear.play("disappear")
+		await appear.animation_finished
 		# TODO: play_sound(success)
 		player.play("success")
 		await player.animation_finished
@@ -55,9 +56,10 @@ func _on_success_bar_value_changed(value: float) -> void:
 func activate() -> void:
 	player.play("pulling")
 	# TODO: play_sound(process)
+	appear.play("appear")
+	await appear.animation_finished
 	catch_area.activate()
 	fish_area.activate()
 	game_timer.start(game_length)
 	set_process(true)
 	set_process_input(true)
-	visible = true
