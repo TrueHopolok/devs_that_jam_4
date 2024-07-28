@@ -4,21 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bnu0i41ofa86v" path="res://assets/sprites/progressbars/triangle_empty.png" id="1_4my27"]
 [ext_resource type="Texture2D" uid="uid://3c2eglxry5j1" path="res://assets/sprites/progressbars/triangle_full_noborder.png" id="2_ebq6u"]
 
-[sub_resource type="Animation" id="Animation_ohenw"]
-resource_name = "appear"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1300, 360), Vector2(1000, 360)]
-}
-
 [sub_resource type="Animation" id="Animation_70cdd"]
 length = 0.001
 tracks/0/type = "value"
@@ -32,6 +17,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1300, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_ohenw"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1300, 360), Vector2(1000, 360)]
 }
 
 [sub_resource type="Animation" id="Animation_ximpn"]

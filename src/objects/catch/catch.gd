@@ -21,8 +21,6 @@ func _process(delta: float) -> void:
 	arrow.rotation_degrees += max_value / cycle_time * delta
 	if arrow.rotation_degrees >= radial_initial_angle + value * 2:
 		# TODO: play_sound(error)
-		player.play("fishing")
-		await player.animation_finished
 		failed.emit()
 		activate()
 
