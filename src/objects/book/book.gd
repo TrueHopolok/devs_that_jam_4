@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var main = get_tree().get_first_node_in_group("Main")
 @onready var stats: Label = %StatsLabel

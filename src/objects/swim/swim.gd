@@ -1,9 +1,9 @@
-extends ProgressBar
+extends TextureProgressBar
 
 signal finished
 
 @export_range(1, 50) var needed_success_amount: int = 5
-@export_range(0.0, 0.5) var timing_error: float = 0.05
+@export_range(0.0, 0.5) var timing_error: float = 0.1
 #@onready var player: AnimationPlayer = get_tree().get_first_node_in_group("PlayerAnimation")
 @onready var background: Node2D = get_tree().get_first_node_in_group("Background")
 

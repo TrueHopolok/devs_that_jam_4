@@ -1,5 +1,6 @@
 extends Node2D
 
+const SAVE_FILE_PATH: String = "user://stats.yours"
 const MIN_FISHES: int = 5
 
 enum STATE {
@@ -29,6 +30,7 @@ var stats: Dictionary = {
 
 
 func _ready() -> void:
+	load_stats()
 	connect_objects()
 	activate_object()
 
@@ -61,18 +63,34 @@ func connect_objects() -> void:
 	objects["throw"].finished.connect(activate_object.bind(STATE.Catching))
 	objects["catch"].failed.connect(func() -> void:
 		stats["lost"] += 1
-		#TODO: save stats
-		)
+		save_stats())
 	objects["catch"].finished.connect(activate_object.bind(STATE.Pulling))
 	objects["pull"].failed.connect(func() -> void:
 		stats["lost"] += 1
-		#TODO: save stats
+		save_stats()
 		activate_object(STATE.Throwing))
 	objects["pull"].finished.connect(func(name: String) -> void:
 		stats["catched"] += 1
+		save_stats()
 		hotbar.display(name)
 		fishes_left -= 1
 		if fishes_left <= 0:
 			activate_object(STATE.Swimming)
 		else:
 			activate_object(STATE.Throwing))
+
+
+func load_stats() -> void:
+	if not FileAccess.file_exists(SAVE_FILE_PATH):
+		return
+	var file := FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
+	var raw_data := file.get_as_text()
+	file.close()
+	stats = JSON.parse_string(raw_data)
+
+
+func save_stats() -> void:
+	var raw_data := JSON.stringify(stats, "\t")
+	var file := FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
+	file.store_string(raw_data)
+	file.close()
