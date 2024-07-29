@@ -18,6 +18,10 @@
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_qemhp")
 
+[node name="AutosavingTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [node name="Background" parent="." instance=ExtResource("2_3tnq7")]
 
 [node name="AnimtedCamera" parent="." instance=ExtResource("4_t3oad")]
@@ -59,3 +63,5 @@ unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("13_7bxmv")]
 position = Vector2(640, 360)
+
+[connection signal="timeout" from="AutosavingTimer" to="." method="save_stats"]

@@ -27,6 +27,7 @@ var stats: Dictionary = {
 	"lost": 0,
 	"catched": 0,
 }
+var launch_time: int = Time.get_ticks_msec()
 
 
 func _ready() -> void:
@@ -90,6 +91,9 @@ func load_stats() -> void:
 
 
 func save_stats() -> void:
+	var new_launch_time := Time.get_ticks_msec()  
+	stats["time"] += new_launch_time - launch_time
+	launch_time = new_launch_time
 	var raw_data := JSON.stringify(stats, "\t")
 	var file := FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
 	file.store_string(raw_data)

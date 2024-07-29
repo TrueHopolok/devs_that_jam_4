@@ -18,5 +18,4 @@ func _on_timer_timeout() -> void:
 
 
 func _on_random_finished() -> void:
-	timer.wait_time = randi_range(60, 300)
-	timer.start()
+	timer.start(randi_range(30, 180))

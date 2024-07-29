@@ -36,13 +36,11 @@ func _input(_event: InputEvent) -> void:
 				appear.play("disappear")
 				await appear.animation_finished
 				finished.emit()
-				visible = false
 		value = 0.0
 
 
 func activate() -> void:
-	player.play("swimming")
-	player.stop()
+	player.play("swimming", 1.0, true)
 	value = 0.0
 	current_success_amount = 0
 	appear.play("appear")

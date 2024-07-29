@@ -25,8 +25,9 @@ func _on_button_pressed() -> void:
 	audio.stream = sound_open[sound_status]
 	audio.play()
 	sound_status = not sound_status
+	main.save_stats()
 	stats.text = FISH_CAUGHT.format({
-		"time": main.stats["time"], 
+		"time": str(int(main.stats["time"] / 60000)) + " min", 
 		"catched": main.stats["catched"], 
 		"lost": main.stats["lost"]})
 	book.visible = !book.visible

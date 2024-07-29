@@ -4,7 +4,7 @@ signal finished
 signal failed
 
 @export_range(1.0, 120.0) var min_catch_time: float = 5.0
-@export_range(1.0, 120.0) var max_catch_time: float = 30.0
+@export_range(1.0, 120.0) var max_catch_time: float = 25.0
 @export_range(0.5, 5.0) var cycle_time: float = 1.2
 @export_range(1, 50) var cycles_amount: int = 2
 @onready var timer: Timer = $Timer
