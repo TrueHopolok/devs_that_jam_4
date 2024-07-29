@@ -32,6 +32,8 @@ func _process(delta: float) -> void:
 func _on_game_timer_timeout() -> void:
 	set_process(false)
 	set_process_input(false)
+	catch_area.deactivate()
+	fish_area.deactivate()
 	appear.play("disappear")
 	await appear.animation_finished
 	audio.stream = sounds["fail"]
